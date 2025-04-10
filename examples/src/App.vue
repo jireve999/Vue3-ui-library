@@ -1,15 +1,11 @@
 <template>
-  <a-button-group size="large">
-    <a-button :before-change="handlerChange">默认</a-button>
-    <a-button icon="icon-baocun" size="mini" :before-change="handlerChange">默认</a-button>
-    <a-button type="primary" icon="icon-bofangfmbofangliebiao" :before-change="handlerChange">主要</a-button>
-  </a-button-group>
-
-  <a-button-group>
-    <a-button :before-change="handlerChange">默认</a-button>
-    <a-button icon="icon-baocun" :before-change="handlerChange">默认</a-button>
-    <a-button type="primary" icon="icon-bofangfmbofangliebiao" :before-change="handlerChange">主要</a-button>
-  </a-button-group>
+  <div>
+    <a-button size="large" disabled>默认</a-button>
+    <a-button type="success" size="medium" loading>成功</a-button>
+    <a-button type="primary" size="large" disabled>主要</a-button>
+    <a-button type="warning" size="mini" >警告</a-button>
+    <a-button type="danger" size="small" >错误</a-button>
+  </div>
 </template>
 
 <script setup>
@@ -27,4 +23,10 @@ const handlerClick = (e) => {
 
 <style>
 @import "./assets/iconfont/iconfont.css";
+.test {
+  height: 50px;
+}
+.color-primary {
+  color: var(--a-primary-color);
+}
 </style>
