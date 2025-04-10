@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
-import './style.css'
-import Saji from "../../packages";
 import App from './App.vue'
-const app = createApp(App)
-app.use(Saji).mount('#app')
+// UI组件库
+import UILibrary from "../../packages"
+import "@ui-library/components/button/src/style"
+createApp(App).use(UILibrary).mount('#app')
