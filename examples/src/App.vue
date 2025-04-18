@@ -2,38 +2,27 @@
 </script>
 
 <template>
-  <a-button type="error" size="large">
-    <a-icon><Delete /></a-icon>
-    删除
-    <a-icon><Delete /></a-icon>
-  </a-button>
-  <a-button type="error" size="large">
-    <a-icon><Delete /></a-icon>
-    删除
-    <a-icon><Delete /></a-icon>
-  </a-button>
+  <div>
+    <a-textarea ref='input' v-model="value"
+    @input="henalerInput"
+    count
+    maxlength="255"
+    :rows="7"
+    @compositionstart="handlerCompositionStart"
+    @compositionupdate="handlerCompositionUpdate"
+    @compositionend="handlerCompositionEnd"></a-textarea>
+  </div>
 </template>
 
 <script setup>
-import { Delete } from "@ui-library/icons"
-const handlerChange = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve()
-    }, 2000)
-  })
-}
-const handlerClick = (e) => {
-  console.log(e)
-}
+import { onMounted, ref } from "vue"
+const value = ref('面向高级：要学会的UI组件库开发')
 </script>
 
-<style>
-@import "./assets/iconfont/iconfont.css";
+<style lang="scss" scoped>
 .test {
-  height: 50px;
+  padding-top: 12px;
+  font-size: 14px;
 }
-.color-primary {
-  color: var(--a-primary-color);
-}
+
 </style>

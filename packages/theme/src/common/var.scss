@@ -63,6 +63,8 @@ $text-color: map.deep-merge(
         'secondary': #7c808c,    // 文字辅色
         'disabled': #abb1bf,     // 文字禁用
         'placeholder': #c9cdd9,  // 文字占位
+        'light-8': #f5f6fa,      // 文字占位
+        'light-9': #fafbff,      // 文字占位
     ),
     $text-color
 );
@@ -85,6 +87,7 @@ $border-color: map.deep-merge(
     (
         'default': #e2e6f1,      // 边框主色
         'disabled': #ebeef5,     // 边框禁用
+        'hover': #C9CDD9         // 鼠标悬停
     ),
     $border-color
 );
@@ -100,21 +103,57 @@ $component-size: map.deep-merge(
     $component-size
 );
 
-/** 组件尺寸 */
+/** 颜色 */
 $color: () !default;
 $color: map.deep-merge(
     (
         'white': $color-white,    // 白色
         'black': $color-black,    // 黑色
+        'disabled-bg': '#F5F6FA'
     ),
     $color
 );
 
+/** 颜色 */
+$component-round: () !default;
+$component-round: map.deep-merge(
+    (
+        'small': 10px,      // 小的
+        'default': 12px,    // 默认的
+        'large': 12px,      // 大的
+        'round': 100px      // 圆的
+    ),
+    $component-round
+);
+
+/** 边距 */
+$padding: () !default;
+$padding: map.deep-merge(
+    (
+        'small': 6px,      // 小的
+        'default': 10px,    // 默认的
+        'large': 10px,      // 大的
+    ),
+    $padding
+);
+
+/** 圆角 */
+$round: () !default;
+$round: map.deep-merge(
+    (
+        'default': 4px,
+        'round': 100px
+    ),
+    $round
+);
+
 /** 全局配置 */
 $global: (
-    'text-color': $text-color,          // 文字颜色
-    'font-size': $font-size,            // 文字尺寸
-    'border-color': $border-color,      // 边框颜色
-    'component-size': $component-size,  // 组件尺寸
-    'color': $color,                    // 颜色
+    'text-color': $text-color,           // 文字颜色
+    'font-size': $font-size,             // 文字尺寸
+    'border-color': $border-color,       // 边框颜色
+    'component-size': $component-size,   // 组件尺寸
+    'color': $color,                     // 颜色
+    'component-round': $component-round, // 圆角
+    'padding': $padding
 );

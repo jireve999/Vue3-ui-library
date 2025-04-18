@@ -8,3 +8,8 @@
     // 层次色
     @include set-color-light();
 }
+@font-face {
+    font-family: 'Aileron';
+    src: url("./Aileron.otf");
+}
+body { font-family: 'Aileron'; }

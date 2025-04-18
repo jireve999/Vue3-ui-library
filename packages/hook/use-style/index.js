@@ -5,13 +5,14 @@ export const useStyle = () => {
   }
   // 颜色
   const color = (value) => {
-    console.log('value', value)
     return value ? {'color': value} : {}
   }
+  // 宽度
+  const width = (value) => value ? {'width': value} : {}
+  
   return {
     fontSize,
-    color
+    color,
+    width
   }
 }
-
-

@@ -87,3 +87,70 @@
   @return $button;
 }
 
+// input输入框组件配置
+@function inputVar(){
+  $input: (
+    'text-color': ( // 字体颜色 
+      'default': getVarName('text-color', 'primary')
+    ),
+    'text-color-aside': ( // 字体颜色 
+      'default': getVarName('text-color', 'secondary')
+    ),
+    'border-color': (  // 边框颜色 
+      'default': getVarName('border-color', 'default')
+    ),
+    'bg-color': (  // 背景颜色 
+      'default': getVarName('color', 'white')
+    ),
+    'bg-color-aside': (  // 背景颜色 
+      'default': getVarName('color', 'disabled-bg')
+    ),
+    'size': (  // 组件尺寸
+      'default': getVarName('component-size', 'default')
+    ),
+    'font-size': (  // 文字大小
+      'default': getVarName('font-size', 'default')
+    ),
+    'round': (  // 圆角
+      'default': getVarName('component-round', 'default')
+    ),
+    'padding': (  // 边距
+      'default': getVarName('padding', 'default')
+    ),
+  );
+  @return $input;
+}
+
+// textarea输入框组件配置
+@function textareaVar(){
+  $textarea: (
+    'text-color': ( // 字体颜色 
+      'default': getVarName('text-color', 'primary')
+    ),
+    'text-color-aside': ( // 字体颜色 
+      'default': getVarName('text-color', 'secondary')
+    ),
+    'border-color': (  // 边框颜色 
+      'default': getVarName('border-color', 'default')
+    ),
+    'bg-color': (  // 背景颜色 
+      'default': getVarName('color', 'white')
+    ),
+    'bg-color-aside': (  // 背景颜色 
+      'default': getVarName('color', 'disabled-bg')
+    ),
+    'size': (  // 组件尺寸
+      'default': getVarName('component-size', 'default')
+    ),
+    'font-size': (  // 文字大小
+      'default': getVarName('font-size', 'default')
+    ),
+    'padding': (  // 文字大小
+      'default': getVarName('padding', 'default')
+    ),
+    'round': (  // 圆角
+      'default': getVarName('component-round', 'default')
+    )
+  );
+  @return $textarea;
+}

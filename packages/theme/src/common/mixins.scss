@@ -10,7 +10,6 @@
     #{createVarName(('color', $type))}: #{$color};
   }
 }
-
 @mixin set-color-light() {
   @each $type in $types {
     @for $i from 1 through 9 {
@@ -50,7 +49,23 @@
   }
 }
 
-// 生成元素
+// 后代选择器
+@mixin d($block) {
+  $name: '.' + $namespace + $connect + $block;
+  #{$name} {
+    @content;
+  }
+}
+
+// 同级选择器
+@mixin adn($elem) {
+  $name: '+ .' + $namespace + $connect + $elem;
+  #{$name} {
+    @content;
+  }
+}
+
+// 生成elem
 @mixin e($elem) {
   $name: $b + $element-connect + $elem;
   @at-root {
