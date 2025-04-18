@@ -4,7 +4,7 @@
     :class="[
       ns.b(), 
       ns.m(type), 
-      ns.m('size', isGroupSize), 
+      ns.m('size', isGroupSize || size), 
       ns.is('round', round), 
       ns.is('disabled', disabled), 
       ns.is('loading', loading || _loading), 
@@ -22,7 +22,7 @@
       <i class="a-icon iconfont icon-loading" :class="[`${ns.is('loading-transition', loading || _loading)}`]"></i>
     </template>
     <i v-else-if="icon" class="a-icon iconfont" :class="icon"></i>
-    <span v-if="$slots.default && !circle"><slot /></span>
+    <span v-if="$slots.default"><slot /></span>
   </button>
 </template>
 <script>
@@ -41,7 +41,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "",
+    default: "default",
   },
   icon: {
     type: String,
@@ -60,7 +60,7 @@ const props = defineProps({
 });
 /** computed */
 const isGroup = parent.group()
-const isGroupSize = props.size || parent.props('size')
+const isGroupSize = parent.props('size')
 /** loading */
 const _loading = ref(false)
 /**

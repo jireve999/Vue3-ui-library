@@ -1,14 +1,21 @@
+<script setup>
+</script>
+
 <template>
-  <div>
-    <a-button size="large" disabled>默认</a-button>
-    <a-button type="success" size="medium" loading>成功</a-button>
-    <a-button type="primary" size="large" disabled>主要</a-button>
-    <a-button type="warning" size="mini" >警告</a-button>
-    <a-button type="danger" size="small" >错误</a-button>
-  </div>
+  <a-button type="error" size="large">
+    <a-icon><Delete /></a-icon>
+    删除
+    <a-icon><Delete /></a-icon>
+  </a-button>
+  <a-button type="error" size="large">
+    <a-icon><Delete /></a-icon>
+    删除
+    <a-icon><Delete /></a-icon>
+  </a-button>
 </template>
 
 <script setup>
+import { Delete } from "@ui-library/icons"
 const handlerChange = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {

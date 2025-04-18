@@ -29,6 +29,7 @@
     line-height: 1;             // 根据该元素本身的字体大小设置行高
     display: inline-flex;       // 盒模型，弹性布局
     align-items: center;        // 子元素垂直居中
+    gap: 0 4px;
   }
   &:hover {
     color: var(#{getVarName('button', 'hover-text-color')});
@@ -49,15 +50,14 @@
   // }
   + .a-button { margin-left: 16px; }
   // 圆形按钮
-  &.is-round { border-radius: 100px; }
-  &.is-text {
+  @include s((round)) { border-radius: 100px; }
+  @include s((text)) {
     color: var(#{getVarName('button', 'is-text-color')});
     &:hover {
       background-color: var(#{getVarName('button', 'hover-is-text-bg-color')});
       border-color: var(#{getVarName('button', 'hover-is-text-bg-color')});
     }
-    &.is-disabled, 
-    &.is-loading {
+    @include s((disabled, loading)) {
       color: var(#{getVarName('button', 'disabled-is-text-color')});
       background-color: var(#{getVarName('button', 'disabled-is-text-bg-color')});
       border-color: var(#{getVarName('button', 'disabled-is-text-bg-color')});
@@ -65,19 +65,19 @@
     background-color: transparent;
     border-color: transparent;
   }
-  &.is-border {
+  @include s((border)) {
     color: var(#{getVarName('button', 'is-text-color')});
     &, &:hover {
       background-color: #fff;
     }
   }
-  &.is-dashed {
+  @include s((dashed)) {
     border-style: dashed;
   }
-  &.is-block {
-    display: block;  // 块级元素
-    width: 100%;     // 宽度100%，适应于父元素宽度
-    margin-left: 0;  // 左边边距为0
+  @include s((block)) {
+    display: block;
+    width: 100%;
+    margin-left: 0;
   }
   .a-icon { font-size: var(#{getVarName('button', 'font-size')}); }
   @include m(size, small){
@@ -105,11 +105,12 @@
     font-size: 16px;
     .a-icon { font-size: 16px; }
   }
-  &.is-link {
+  @include s((link)) {
     color: var(#{getVarName('button', 'is-link-color')});
     &:hover { color: var(#{getVarName('button', 'hover-is-link-color')}); }
-    &.is-disabled, 
-    &.is-loading { color: var(#{getVarName('button', 'disabled-is-link-color')}); }
+    @include s((disabled, loading)) { 
+      color: var(#{getVarName('button', 'disabled-is-link-color')});
+    }
     &, &:hover {
       padding: 0;
       height: auto;
@@ -119,13 +120,13 @@
       text-decoration: underline;
     }
   }
-  &.is-circle { 
+  @include s((circle)) { 
     border-radius: 100px;
     padding: 0;
     min-width: auto;
     width: var(#{getVarName('button', 'size')})
   }
-  &.is-button-group {
+  @include s((button-group)) {
     border-radius: 0;
     + .is-button-group { margin-left: -2px; }
     &:first-child { border-radius: 12px 0 0 12px; }
